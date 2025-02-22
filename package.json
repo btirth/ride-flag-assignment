@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "coverage": "jest --coverage"
   },
   "repository": {
     "type": "git",
@@ -16,5 +20,14 @@
     "url": "https://github.com/btirth/ride-flag-assignment/issues"
   },
   "homepage": "https://github.com/btirth/ride-flag-assignment#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "csv-parser": "^3.2.0",
+    "date-fns": "^4.1.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0",
+    "winston": "^3.17.0"
+  }
 }
