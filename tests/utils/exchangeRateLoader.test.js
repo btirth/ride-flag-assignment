@@ -1,6 +1,6 @@
 const fs = require("fs");
 const csv = require("csv-parser");
-const loadExchangeRates = require("../../utils/exchangeRateLoader");
+const loadExchangeRates = require("../../src/utils/exchangeRateLoader");
 
 jest.mock("fs");
 jest.mock("csv-parser", () => jest.fn());
@@ -14,7 +14,6 @@ describe("loadExchangeRates", () => {
     const mockCsvData = [
       {
         REF_DATE: "2023-05-31",
-        GEO: "Australia",
         "Type of currency": "Australian dollar, daily average",
         VALUE: "1.23",
       },
@@ -39,7 +38,6 @@ describe("loadExchangeRates", () => {
     expect(result).toEqual([
       {
         date: "2023-05-31",
-        country: "Australia",
         currency: "Australian dollar, daily average",
         value: 1.23,
       },
@@ -69,13 +67,11 @@ describe("loadExchangeRates", () => {
     const mockCsvData = [
       {
         REF_DATE: "2023-05-31",
-        GEO: "Australia",
         "Type of currency": "Australian dollar, daily average",
         VALUE: "invalid",
       },
       {
         REF_DATE: "2023-05-31",
-        GEO: "United States",
         "Type of currency": "U.S. dollar, daily average",
         VALUE: "",
       },

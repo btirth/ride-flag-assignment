@@ -1,7 +1,7 @@
 const {
   convertCurrency,
   validateRequest,
-} = require("../../services/conversionService");
+} = require("../../src/services/conversionService");
 
 describe("Convert currency", () => {
   test("Valid conversion request", async () => {
@@ -69,7 +69,7 @@ describe("Convert currency", () => {
     );
   });
 
-  test("Invalid date format", () => {
+  test("Invalid date", () => {
     const body = {
       date: "invalid-date",
       currency: "U.S. dollar, daily average",
@@ -82,7 +82,9 @@ describe("Convert currency", () => {
       body.amount_in_cad
     );
     expect(validation.valid).toBe(false);
-    expect(validation.errors).toContain("Invalid date format");
+    expect(validation.errors).toContain(
+      "Invalid date, Please provide valid date in 'YYYY-MM-DD' format"
+    );
   });
 
   test("Invalid amount_in_cad", () => {
