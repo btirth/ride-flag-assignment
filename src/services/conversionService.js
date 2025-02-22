@@ -72,7 +72,7 @@ exports.convertCurrency = async (date, currency, amountInCAD) => {
     return { statusCode: 500, error: "Invalid exchange rate" };
   }
 
-  const convertedAmount = parseFloat(amountInCAD / exchangeRate).toFixed(4);
+  const convertedAmount = parseFloat((amountInCAD / exchangeRate).toFixed(4));
 
   return {
     date,

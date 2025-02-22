@@ -58,15 +58,17 @@ npm test
 │   │   ├── conversionService.js
 │   ├── utils
 │   │   ├── exchangeRateLoader.js
+│   │   ├── logger.js
+│   ├── app.js
 ├── data
 │   ├── exchange_rates.csv
 ├── tests
 │   ├── controllers
-│   │   ├── conversionController.js
+│   │   ├── conversionController.test.js
 │   ├── services
-│   │   ├── conversionService.js
+│   │   ├── conversionService.test.js
 │   ├── utils
-│   │   ├── exchangeRateLoader.js
+│   │   ├── exchangeRateLoader.test.js
 ├── .env
 ├── package.json
 ├── README.md
