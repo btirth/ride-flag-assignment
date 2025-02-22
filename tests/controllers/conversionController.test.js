@@ -1,8 +1,8 @@
 const request = require("supertest");
-const app = require("../../app");
-const currencyService = require("../../services/conversionService");
+const app = require("../../src/app");
+const currencyService = require("../../src/services/conversionService");
 
-jest.mock("../../services/conversionService");
+jest.mock("../../src/services/conversionService");
 
 const mockResponse = (statusCode, body) => {
   return {

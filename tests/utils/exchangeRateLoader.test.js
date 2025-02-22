@@ -1,6 +1,6 @@
 const fs = require("fs");
 const csv = require("csv-parser");
-const loadExchangeRates = require("../../utils/exchangeRateLoader");
+const loadExchangeRates = require("../../src/utils/exchangeRateLoader");
 
 jest.mock("fs");
 jest.mock("csv-parser", () => jest.fn());

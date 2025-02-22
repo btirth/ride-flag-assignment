@@ -1,7 +1,7 @@
 const {
   convertCurrency,
   validateRequest,
-} = require("../../services/conversionService");
+} = require("../../src/services/conversionService");
 
 describe("Convert currency", () => {
   test("Valid conversion request", async () => {
