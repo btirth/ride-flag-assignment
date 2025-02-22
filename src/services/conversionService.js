@@ -30,7 +30,9 @@ exports.validateRequest = (date, currency, amount_in_cad) => {
   if (!amount_in_cad) validationErrors.push("amount_in_cad is required");
 
   if (date && !isValid(parseISO(date)))
-    validationErrors.push("Invalid date format");
+    validationErrors.push(
+      "Invalid date, Please provide valid date in 'YYYY-MM-DD' format"
+    );
 
   const amountInCAD = parseFloat(amount_in_cad);
   if (amount_in_cad && isNaN(amountInCAD))
