@@ -13,7 +13,7 @@ const filePath = path.resolve(
 /**
  * This function loads exchange rates from CSV file.
  * Reference: https://stackoverflow.com/questions/23080413/parsing-a-csv-file-using-nodejs
- * @returns {Promise<Array<{ date: string, country: string, currency: string, value: number | null }>>}
+ * @returns {Promise<Array<{ date: string, currency: string, value: number | null }>>}
  */
 const loadExchangeRates = () => {
   return new Promise((resolve, reject) => {
@@ -44,7 +44,6 @@ const loadExchangeRates = () => {
  */
 const validateExchangeRateRow = (data) => {
   const date = data.REF_DATE?.trim();
-  const country = data.GEO?.trim();
   const currency = data["Type of currency"]?.trim();
   const value = data.VALUE?.trim();
   const parsedValue = value ? parseFloat(value) : null;
@@ -52,7 +51,6 @@ const validateExchangeRateRow = (data) => {
   if (
     !date ||
     !isValid(parseISO(date)) ||
-    !country ||
     !currency ||
     parsedValue === null ||
     isNaN(parsedValue)
@@ -62,7 +60,6 @@ const validateExchangeRateRow = (data) => {
 
   return {
     date,
-    country,
     currency,
     value: parsedValue,
   };
