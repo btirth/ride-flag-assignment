@@ -33,7 +33,7 @@ exports.validateRequest = async (date, currency, amount_in_cad) => {
   if (!date) {
     validationErrors.push({
       field: "date",
-      message: "Date is required field.",
+      message: "date is required field.",
     });
   } else if (!isValid(parseISO(date))) {
     validationErrors.push({
