@@ -19,11 +19,7 @@ jobs:
           node-version: 22
 
       - name: Install Dependencies
-        run: |
-          cd lambda
-          npm install
+        run: npm install
 
       - name: Run Tests
-        run: |
-          cd lambda
-          npm test
+        run: npm test
