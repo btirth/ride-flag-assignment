@@ -8,7 +8,7 @@ exports.convertCurrency = async (req, res) => {
   try {
     const { date, currency, amount_in_cad } = req.body;
 
-    const validation = currencyService.validateRequest(
+    const validation = await currencyService.validateRequest(
       date,
       currency,
       amount_in_cad
