@@ -53,16 +53,16 @@ npm test
 ```
 ├── .github
 │   ├── workflows
-│   │   ├── cicd.yml
+│   │   ├── cicd.yml [Execute test cases - part of CI/CD Pipeline]
 ├── src
 │   ├── controllers
 │   │   ├── conversionController.js
 │   ├── routes
 │   │   ├── conversionRoutes.js
 │   ├── services
-│   │   ├── conversionService.js
+│   │   ├── conversionService.js [Handles business (Validation + Conversion) logic]
 │   ├── utils
-│   │   ├── exchangeRateLoader.js
+│   │   ├── exchangeRateLoader.js [Loads exchange rate from CSV file]
 │   │   ├── logger.js
 │   ├── app.js
 ├── data
