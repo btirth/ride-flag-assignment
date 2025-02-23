@@ -44,11 +44,16 @@ Run Jest tests using:
 npm test
 ```
 
+![test-coverage](image.png)
+
 ---
 
 ## 📁 Project Structure
 
 ```
+├── .github
+│   ├── workflows
+│   │   ├── cicd.yml
 ├── src
 │   ├── controllers
 │   │   ├── conversionController.js
